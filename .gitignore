@@ -1,2 +1,6 @@
 presentation
 .idea
+graphql/db/data
+db/data
+couchdb/data
+mysql/data
