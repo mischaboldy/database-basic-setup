@@ -25,7 +25,7 @@ query {
 }
 ```
 
-alternative using a fragment:
+### alternative using a fragment:
 
 ```
 query {
@@ -42,6 +42,33 @@ query {
     }
   }
 }
+
+fragment information on Child {
+  name
+  id
+  description
+}
+```
+
+### another example of fragment
+
+```
+query {
+   parentById (id: 1) {
+       id
+      name
+      description
+      childrenByParentTableId {
+        nodes {
+         ...information
+      }
+    }
+  }
+  childById(id: 1) {
+    ...information
+  }
+}
+
 
 fragment information on Child {
   name
